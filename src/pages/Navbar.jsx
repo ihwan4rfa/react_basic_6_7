@@ -1,14 +1,27 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+
+    const token = localStorage.getItem('access_token')
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        localStorage.removeItem("access_token");
+
+        setTimeout(() => {
+            navigate("/login")
+        }, 1000)
+    }
+
     return (
         <div className="navbar">
-            <Link to="/">
-                <h1 className="navbar-text">Home</h1>
+            <Link className="link" to="/">
+                <h1>Home</h1>
             </Link>
-            <Link to="/login">
-                <h1 className="navbar-text">Login</h1>
+            <Link className="link" to="/login">
+                <h1>Login</h1>
             </Link>
+            {token && <button className="link" onClick={handleLogout}>logout</button>}
         </div>
     )
 }

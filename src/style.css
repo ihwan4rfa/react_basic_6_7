@@ -10,6 +10,17 @@ html {
     margin: 10px 0;
     border-radius: 999px;
     background-color: white;
+    text-decoration: none;
+    color: black;
+}
+
+.layout-detail {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    padding: 10px 10px;
+    margin: 10px 0;
+    border-radius: 50px;
+    background-color: white;
 }
 
 .navbar {
@@ -24,14 +35,23 @@ html {
     display: flex;
 }
 
-.navbar-text {
-    color: white;
+.link {
     text-decoration: none;
+    color: white;
     padding: 0 15px;
+}
+
+.link:hover {
+    color: orange;
 }
 
 .text-layout {
     margin-left: 20px;
+    color: black;
+}
+
+.text-layout h1:hover {
+    color: orange;
 }
 
 .layout img {
@@ -41,12 +61,15 @@ html {
     overflow: hidden;
 }
 
-.layout h1 {
-    font-size: 25px;
+.layout-detail img {
+    width: 200px;
+    height: 200px;
+    border-radius: 999px;
+    overflow: hidden;
 }
 
-.layout h2 {
-    font-size: 15px;
+.layout h1 {
+    font-size: 25px;
 }
 
 .button-layout {

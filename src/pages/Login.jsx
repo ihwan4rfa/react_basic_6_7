@@ -33,7 +33,11 @@ const Login = () => {
                 payLoad
             );
             console.log(response);
-            setToken(response.data.data.token)
+            const token = response.data.data.token;
+            setToken(token)
+
+            // menyimpan token ke local storage
+            localStorage.setItem("access_token", token)
 
             setTimeout(() => {
                 navigate("/")

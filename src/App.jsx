@@ -1,17 +1,9 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Home from "./pages/Home"
-import Login from "./pages/Login"
+import { useRoutes } from "react-router-dom"
+import { routeList } from "./routes/routeList"
 
 function App() {
-
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-      </Routes>
-    </BrowserRouter>
-  )
+  const element = useRoutes(routeList)
+  return element;
 }
 
 export default App

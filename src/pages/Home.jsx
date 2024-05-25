@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import '../style.css'
 
@@ -26,15 +27,14 @@ const Home = () => {
     return (
         <div>
             <Navbar />
-            <h1>Halo halo</h1>
             {datas.map((item) => (
-                <div className="layout">
+                <Link to={`/menu/${item?.id}`} className="layout">
                     <img src={item?.imageUrl} alt="" />
                     <div className="text-layout">
                         <h1>{item?.name}</h1>
-                        <h1>{`Harga: ${item?.price}.000`}</h1>
+                        <h3>{`Harga: ${item?.price}.000`}</h3>
                     </div>
-                </div>
+                </Link>
             ))}
         </div>
     )
